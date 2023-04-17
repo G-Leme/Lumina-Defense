@@ -208,15 +208,15 @@ PrefabInstance:
       objectReference: {fileID: 1114353453}
     - target: {fileID: 1953653851, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
       propertyPath: lightArea.x
-      value: 45
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1953653851, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
       propertyPath: lightArea.y
-      value: 45
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1953653851, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
       propertyPath: lightArea.z
-      value: 45
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1904695692463046149, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
       propertyPath: m_Name

@@ -16,7 +16,7 @@ public class LightTurretBullet : MonoBehaviour
 
         targets = GameObject.FindGameObjectWithTag("Enemy");
 
-      
+        AttackClosestEnemy();
 
 
     }
@@ -25,7 +25,7 @@ public class LightTurretBullet : MonoBehaviour
     void Update()
     {
         targets = GameObject.FindGameObjectWithTag("Enemy");
-        AttackClosestEnemy();
+      
     }
 
     private void AttackClosestEnemy()

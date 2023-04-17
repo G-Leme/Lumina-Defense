@@ -44,7 +44,7 @@ public class TurretPlacement : MonoBehaviour
     
             currentPlacableObject = null;
             turretPlacementArea.SetActive(false);
-            lightAreaScript.TakeDamageLight(8f);
+            lightAreaScript.TakeDamageLight(7f);
         }
     }
 

@@ -112,7 +112,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &-1682639793224937976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cacc4cc3faabb48b19baf66db3c3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 30.2
+  force: 70
   damage: 34
