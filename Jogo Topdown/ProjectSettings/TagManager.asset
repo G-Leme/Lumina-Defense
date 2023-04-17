@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ForceField
+  - DomeShield
+  - Enemy
+  - PredictionPoint
+  - LightSource
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - ForceField
+  - Water
+  - UI
+  - Player
+  - PlayerBullet
+  - Enemy
+  - EnemyBullet
+  - Weapon
+  - PowerupBox
+  - LightSource
+  - PlayerBoundary
+  - TurretPlacing
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
