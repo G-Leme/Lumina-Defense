@@ -179,6 +179,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7678192617690897682, guid: 3233bba40fd63a94cb9965663c6733f4, type: 3}
     - target: {fileID: 488080651, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
+      propertyPath: turretPreview
+      value: 
+      objectReference: {fileID: 9044054437057501269, guid: ff0e5687d41d1ac478a1e62f2ae6b807, type: 3}
+    - target: {fileID: 488080651, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
       propertyPath: lightTurretScript
       value: 
       objectReference: {fileID: 7678192617690897685, guid: 3233bba40fd63a94cb9965663c6733f4, type: 3}
