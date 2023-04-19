@@ -33,7 +33,7 @@ public class EnemyBulletScript : MonoBehaviour
             if (collision.gameObject.TryGetComponent<LightArea>(out LightArea LightComponnent))
             {
         
-                LightComponnent.TakeDamageLight(0.1f);
+                LightComponnent.TakeDamageLight(0.5f);
              //   playerComponent.tookDamage = true;
                // playerComponent.immunityTime = 0;
             

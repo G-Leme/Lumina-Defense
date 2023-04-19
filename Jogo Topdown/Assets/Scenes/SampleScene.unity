@@ -2674,9 +2674,9 @@ MonoBehaviour:
     cost: 2
   waveMultiplier: 0
   enemies:
-  - enemyPrefab: {fileID: 6852744768309407899, guid: 1aa2d8bdccfa25c4b89cbaffdda86e07, type: 3}
+  - enemyPrefab: {fileID: 84001169699701361, guid: 915561a3ba8fd3f47ad5f874479b177f, type: 3}
     cost: 1
-  - enemyPrefab: {fileID: 6852744768309407899, guid: bff5aee259286704fb048c92b40c0b09, type: 3}
+  - enemyPrefab: {fileID: 84001169699701361, guid: 915561a3ba8fd3f47ad5f874479b177f, type: 3}
     cost: 1
   currWave: 0
   waveCost: 5
@@ -2691,7 +2691,7 @@ MonoBehaviour:
   - {fileID: 805082143}
   spawnIndex: 0
   powerUp: {fileID: 2260074377142788157, guid: 984dd7c362342f04c9bbb80097be9cca, type: 3}
-  waveDuration: 70
+  waveDuration: 60
   currWaveUI: {fileID: 1310526032}
   enemiesLeft: {fileID: 202375627}
   spawnedEnemies: []
@@ -3027,7 +3027,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 780, y: 510}
+  m_AnchoredPosition: {x: 735, y: 510}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911798562

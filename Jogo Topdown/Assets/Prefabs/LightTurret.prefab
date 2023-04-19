@@ -148,7 +148,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   bulletSpeed: 20
-  cooldown: 2
+  cooldown: 2.5
 --- !u!54 &-8889002440558668067
 Rigidbody:
   m_ObjectHideFlags: 0
