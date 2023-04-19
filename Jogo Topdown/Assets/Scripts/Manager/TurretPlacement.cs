@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class TurretPlacement : MonoBehaviour
@@ -17,6 +18,7 @@ public class TurretPlacement : MonoBehaviour
     [SerializeField] LightTurret lightTurretScript;
     [SerializeField] private GameObject lightTurret;
     public float sparkCount;
+    [SerializeField]private TextMeshProUGUI sparkCountUI;
 
 
 
@@ -29,7 +31,7 @@ public class TurretPlacement : MonoBehaviour
 
     void Update()
     {
-
+        sparkCountUI.text = sparkCount.ToString();
 
         HandleObjectKey();
         if (placableObject != null)

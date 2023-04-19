@@ -29348,7 +29348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a5087a5361d9447a35996860092f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightArea: {x: 35, y: 35, z: 35}
+  lightArea: {x: 45, y: 45, z: 45}
+  gameOverUI: {fileID: 0}
 --- !u!135 &2083522304
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -49227,3 +49228,5 @@ MonoBehaviour:
   turretLostArea: {fileID: 3429680335976579368}
   lightTurretScript: {fileID: 7678192617690897685, guid: 3233bba40fd63a94cb9965663c6733f4, type: 3}
   lightTurret: {fileID: 7678192617690897682, guid: 3233bba40fd63a94cb9965663c6733f4, type: 3}
+  sparkCount: 100
+  sparkCountUI: {fileID: 0}

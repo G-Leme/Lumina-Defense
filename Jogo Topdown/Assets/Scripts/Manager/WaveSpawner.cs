@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UIElements;
-
+using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private Enemy enemyBrute;
@@ -26,12 +26,14 @@ public class WaveSpawner : MonoBehaviour
     private float waveTimer;
     private float spawnInterval;
     private float spawnTimer;
+    [SerializeField] private TextMeshProUGUI currWaveUI;
+    [SerializeField] private TextMeshProUGUI enemiesLeft;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-       
+     
     }
 
 
@@ -39,6 +41,8 @@ public class WaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemiesLeft.text = enemiesToSpawn.Count.ToString();
+        currWaveUI.text = currWave.ToString();
         enemiesInGame = GameObject.FindGameObjectWithTag("Enemy");
 
         if (spawnTimer <= 0)

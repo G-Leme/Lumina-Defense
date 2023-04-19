@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 50
-  lightRefund: 0.5
+  lightRefund: 0.8
   spark: 1
 --- !u!114 &-3173652508565496506
 MonoBehaviour:

@@ -20,8 +20,8 @@ public class LightTurret : MonoBehaviour
 
     void Start()
     {
+
         
-       
     }
 
     // Update is called once per frame
@@ -56,4 +56,16 @@ public class LightTurret : MonoBehaviour
         }
 
     }
-}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent<PlayerBoundary>(out PlayerBoundary destroyTurret))
+        {
+
+            Debug.Log("Destroy");
+            Destroy(gameObject);
+
+        }
+        
+    }
+
+}  
