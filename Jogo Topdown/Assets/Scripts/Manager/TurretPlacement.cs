@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TurretPlacement : MonoBehaviour
 {
     [SerializeField] private GameObject turretPreview;
@@ -12,9 +13,11 @@ public class TurretPlacement : MonoBehaviour
     [SerializeField] LightArea lightAreaScript;
     [SerializeField] private GameObject lightArea;
     [SerializeField] private GameObject turretPlacementArea;
-
+    [SerializeField] private GameObject turretLostArea;
     [SerializeField] LightTurret lightTurretScript;
     [SerializeField] private GameObject lightTurret;
+    public float sparkCount;
+
 
 
     private void Start()
@@ -45,8 +48,10 @@ public class TurretPlacement : MonoBehaviour
            placableObject.transform.position.y, placableObject.transform.position.z), Quaternion.identity);
             Destroy(placableObject);
             placableObject = null;
+            turretLostArea.SetActive(false);
             turretPlacementArea.SetActive(false);
             lightAreaScript.TakeDamageLight(7f);
+            sparkCount = sparkCount - 20;
         }
     }
 
@@ -66,18 +71,21 @@ public class TurretPlacement : MonoBehaviour
 
     private void HandleObjectKey()
     {
-       
-        if (Input.GetKeyDown(placementKeyCode))
-        {
-            if (placableObject == null)
+       if(sparkCount >= 20) {
+            if (Input.GetKeyDown(placementKeyCode))
             {
-                turretPlacementArea.SetActive(true);
-                placableObject = Instantiate(turretPreview);
-            }
-            else
-            {
-                turretPlacementArea.SetActive(false);
-                Destroy(placableObject);
+                if (placableObject == null)
+                {
+                    turretLostArea.SetActive(true);
+                    turretPlacementArea.SetActive(true);
+                    placableObject = Instantiate(turretPreview);
+                }
+                else
+                {
+                    turretLostArea.SetActive(false);
+                    turretPlacementArea.SetActive(false);
+                    Destroy(placableObject);
+                }
             }
         }
     }

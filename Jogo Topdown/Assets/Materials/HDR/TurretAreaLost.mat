@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TurretAreaLost
+  m_Shader: {fileID: -6465566751694194690, guid: a162fc150c28ba34093d34ea5e04e359, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_8e7f5c2f5ba04fb28d554aa446b1a24e:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_3373f019501149299805ed7f8008548a: 0.1
+    - Vector1_8aaea0fc04bf4fb9ab8f8e0c59ff4b60: 0.44
+    - Vector1_997cf44a0ab84d5bb16c9a6683454d3d: 0.03
+    - Vector1_fd1d14e525fc4ff9af19704813a5f551: -5.41
+    m_Colors:
+    - Color_9b11c4990cd7405ea762bf66f6cb61a0: {r: 2.153484, g: 0.49570763, b: 0.49570763, a: 0}
+  m_BuildTextureStacks: []

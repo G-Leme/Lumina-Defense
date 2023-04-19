@@ -6,13 +6,16 @@ using UnityEngine.UIElements;
 
 public class WaveSpawner : MonoBehaviour
 {
+    [SerializeField] private Enemy enemyBrute;
     private GameObject enemiesInGame;
     public int waveMultiplier;
     public List<Enemy> enemies = new List<Enemy>();
     public int currWave;
     private int waveValue;
+    [SerializeField] private int waveCost;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
     private float waveInterval;
+    private bool BruteAdded;
 
     public Transform powerupBoxSpawnPos;
     public Transform[] spawnLocation;
@@ -28,11 +31,13 @@ public class WaveSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateWave();
+       
     }
 
+
+
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         enemiesInGame = GameObject.FindGameObjectWithTag("Enemy");
 
@@ -66,12 +71,27 @@ public class WaveSpawner : MonoBehaviour
             waveTimer -= Time.fixedDeltaTime;
         }
 
-        if (waveTimer <= 0 && spawnedEnemies.Count <= 0)
+        if (waveTimer <= 0 && spawnedEnemies.Count <= 0 )
         {
-            currWave++;
-            GenerateWave();
+            
+            
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                Debug.Log("Generating Wave");
+               
+                currWave++;
+                GenerateWave();
+            }
         }
 
+        if(currWave >= 4 && BruteAdded == false)
+        {
+            enemies.Add(enemyBrute);
+            BruteAdded = true;
+            waveCost = 10;
+         
+            waveDuration = waveDuration + 20; ;
+        }
 
         if (enemiesInGame != null)
         {
@@ -80,14 +100,16 @@ public class WaveSpawner : MonoBehaviour
         }
         else if(enemiesInGame == null && enemiesToSpawn.Count <= 0) 
         {
-            StartCoroutine(NextWave());
+       
+                spawnedEnemies.Clear();
+            
           
         }
     }
 
     public void GenerateWave()
     {
-        waveValue = currWave + waveMultiplier + 10;
+        waveValue = currWave + waveCost;
         StopAllCoroutines();
         
         GenerateEnemies();
@@ -131,11 +153,10 @@ public class WaveSpawner : MonoBehaviour
     }
 
  
-    IEnumerator NextWave()
-    {   
-        yield return new WaitForSeconds(6f);
-        spawnedEnemies.Clear();
-        waveInterval = 0;
+    IEnumerator firstWave()
+    {
+        yield return new WaitForSeconds(5f);
+        GenerateWave();    
         yield return null;
         yield break;
     }

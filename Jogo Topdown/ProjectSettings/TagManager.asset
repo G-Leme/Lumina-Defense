@@ -25,8 +25,8 @@ TagManager:
   - LightSource
   - PlayerBoundary
   - TurretPlacing
-  - 
-  - 
+  - EnemyLightDrain
+  - EnemyBrute
   - 
   - 
   - 
