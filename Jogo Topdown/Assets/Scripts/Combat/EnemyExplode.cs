@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyRanged : MonoBehaviour
+public class EnemyExplode : MonoBehaviour
 {
     public float attackRange;
-    private bool canMove;
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     public float bulletSpeed;
-    public float timeBetweenShots = 0.3333f;
+    public float cooldown = 0.3333f;
     private float timeStamp = 0f;
     public float stopRange = 10f;
     public Transform attackPoint;
@@ -25,7 +24,7 @@ public class EnemyRanged : MonoBehaviour
     {
 
 
-        canMove = true;
+       
 
         target = PlayerManager.instance.dome;
 
@@ -36,10 +35,10 @@ public class EnemyRanged : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);
-        if (canMove == true)
-        {
+       
+        
             agent.SetDestination(target.transform.position);
-        }
+        
 
         
 
@@ -51,12 +50,12 @@ public class EnemyRanged : MonoBehaviour
         if (distance <= stopRange)
         {
             agent.speed = 0f;
-            canMove = false;
+            
         }
         else
         {
             agent.speed = 5.5f;
-            canMove = true;
+            
         }
     }
 
@@ -75,10 +74,14 @@ public class EnemyRanged : MonoBehaviour
 
         foreach (Collider lightArea in lightHit)
         {
-
+            if (Time.time - timeStamp < cooldown)
+            {
+                return;
+            }
+            timeStamp = Time.time;
             Debug.Log("hit");
             lightArea.GetComponent<LightArea>().TakeDamageLight(attackDamage);
-            attackRange = 8f;
+            attackRange = 15f;
            StartCoroutine(Explode());
            // var bullet = GameObject.Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
@@ -95,11 +98,9 @@ public class EnemyRanged : MonoBehaviour
        
         yield return new WaitForSeconds(2f);
         attackDamage = 1.5f;
+        yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        StopCoroutine(Explode());
-    }
+   
 }

@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: -2564715997471028664}
   - component: {fileID: 3984545221881075783}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: EnemyExplode
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0ff1fa7f678841e44a52692b1856b17c, type: 2}
+  - {fileID: 2100000, guid: 5e566bd0fec1bcb47bd5bb5a7fdf1e38, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,12 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58caa24be20ec9a4eafc28436e2ebab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 20
+  attackRange: 1.1
   bulletPrefab: {fileID: 4092401004770405703, guid: 466db632f21068d4883876bfdae3e6e6, type: 3}
   bulletSpawnPoint: {fileID: 84001169678404335}
   bulletSpeed: 20
-  timeBetweenShots: 1
-  stopRange: 30
+  cooldown: 0.3333
+  stopRange: 0.99
   attackPoint: {fileID: 84001169699701365}
   forcefieldLayer:
     serializedVersion: 2

@@ -791,6 +791,18 @@ PrefabInstance:
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 990987967}
+    - target: {fileID: 1953653851, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
+      propertyPath: lightArea.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953653851, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
+      propertyPath: lightArea.y
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953653851, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
+      propertyPath: lightArea.z
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 117542278728210550, guid: 6583de51eab62ce43a753c11345c9e08, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2676,7 +2688,9 @@ MonoBehaviour:
   enemies:
   - enemyPrefab: {fileID: 84001169699701361, guid: 915561a3ba8fd3f47ad5f874479b177f, type: 3}
     cost: 1
-  - enemyPrefab: {fileID: 84001169699701361, guid: 915561a3ba8fd3f47ad5f874479b177f, type: 3}
+  - enemyPrefab: {fileID: 6852744768309407899, guid: 1aa2d8bdccfa25c4b89cbaffdda86e07, type: 3}
+    cost: 1
+  - enemyPrefab: {fileID: 6852744768309407899, guid: bff5aee259286704fb048c92b40c0b09, type: 3}
     cost: 1
   currWave: 0
   waveCost: 5
