@@ -28923,6 +28923,7 @@ GameObject:
   - component: {fileID: 1662114362}
   - component: {fileID: 1662114361}
   - component: {fileID: 1662114360}
+  - component: {fileID: 1544633223}
   m_Layer: 13
   m_Name: PlayerBoundary
   m_TagString: Untagged
@@ -29046,6 +29047,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetPosition: {fileID: 0}
+--- !u!114 &1544633223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662114358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059b50324f336cf41ad003591ac7ac3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1668350618
 GameObject:
   m_ObjectHideFlags: 0
@@ -29348,7 +29361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a5087a5361d9447a35996860092f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightArea: {x: 45, y: 45, z: 45}
+  lightArea: {x: 100, y: 100, z: 100}
   gameOverUI: {fileID: 0}
 --- !u!135 &2083522304
 SphereCollider:
@@ -49228,5 +49241,6 @@ MonoBehaviour:
   turretLostArea: {fileID: 3429680335976579368}
   lightTurretScript: {fileID: 7678192617690897685, guid: 3233bba40fd63a94cb9965663c6733f4, type: 3}
   lightTurret: {fileID: 7678192617690897682, guid: 3233bba40fd63a94cb9965663c6733f4, type: 3}
-  sparkCount: 100
+  sparkCount: 200
+  sparkAmount: 20
   sparkCountUI: {fileID: 0}

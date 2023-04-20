@@ -18,6 +18,7 @@ public class TurretPlacement : MonoBehaviour
     [SerializeField] LightTurret lightTurretScript;
     [SerializeField] private GameObject lightTurret;
     public float sparkCount;
+    public int sparkAmount;
     [SerializeField]private TextMeshProUGUI sparkCountUI;
 
 
@@ -44,7 +45,7 @@ public class TurretPlacement : MonoBehaviour
     private void ReleaseIfClicked()
     {
        
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) )
         {
             var turretPrefabInstance = GameObject.Instantiate(turretPrefab, new Vector3(placableObject.transform.position.x,
            placableObject.transform.position.y, placableObject.transform.position.z), Quaternion.identity);
@@ -53,7 +54,8 @@ public class TurretPlacement : MonoBehaviour
             turretLostArea.SetActive(false);
             turretPlacementArea.SetActive(false);
             lightAreaScript.TakeDamageLight(7f);
-            sparkCount = sparkCount - 20;
+            sparkCount = sparkCount - sparkAmount;
+            sparkAmount = sparkAmount + 20;
         }
     }
 
@@ -73,8 +75,8 @@ public class TurretPlacement : MonoBehaviour
 
     private void HandleObjectKey()
     {
-       if(sparkCount >= 20) {
-            if (Input.GetKeyDown(placementKeyCode))
+       if(sparkCount >= sparkAmount && lightAreaScript.lightArea.x >= 35) {
+            if (Input.GetKeyDown(placementKeyCode) && GameObject.FindGameObjectsWithTag("LightTurret").Length <= 3)
             {
                 if (placableObject == null)
                 {

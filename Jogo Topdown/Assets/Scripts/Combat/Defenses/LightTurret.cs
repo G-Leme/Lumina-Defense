@@ -15,20 +15,28 @@ public class LightTurret : MonoBehaviour
     public float bulletSpeed;
     public float cooldown ;
     private float timeStamp = 0f;
-    private float attackDamage;
-
+    [SerializeField] private TurretPlacement turretPlacementScript;
+    private GameObject turretPlacement;
 
     void Start()
     {
-
+        
+       
         
     }
 
     // Update is called once per frame
     void Update()
     {
-      
-            if (Time.time >= timeStamp)
+
+        turretPlacementScript = GameObject.Find("TurretPlacement").GetComponent<TurretPlacement>();
+
+        if(turretPlacementScript == null)
+        {
+            return;
+        }
+
+        if (Time.time >= timeStamp)
             {
                 Attack();
                 timeStamp = Time.time + cooldown;
@@ -60,10 +68,10 @@ public class LightTurret : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<PlayerBoundary>(out PlayerBoundary destroyTurret))
         {
-
             Debug.Log("Destroy");
+            turretPlacementScript.sparkAmount -= 20;
             Destroy(gameObject);
-
+            
         }
         
     }

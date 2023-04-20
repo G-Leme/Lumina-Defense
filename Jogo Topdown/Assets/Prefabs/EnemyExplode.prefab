@@ -181,9 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 100
-  lightRefund: 0
-  spark: 0
+  maxHealth: 50
+  lightRefund: 0.8
+  spark: 1
 --- !u!114 &3984545221881075783
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: -8889002440558668067}
   m_Layer: 16
   m_Name: LightTurret
-  m_TagString: Untagged
+  m_TagString: LightTurret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   bulletSpeed: 20
-  cooldown: 2.5
+  cooldown: 2
+  turretPlacementScript: {fileID: 0}
 --- !u!54 &-8889002440558668067
 Rigidbody:
   m_ObjectHideFlags: 0

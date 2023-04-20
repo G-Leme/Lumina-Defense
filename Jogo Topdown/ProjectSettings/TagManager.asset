@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - PredictionPoint
   - LightSource
+  - LightTurret
   layers:
   - Default
   - TransparentFX
