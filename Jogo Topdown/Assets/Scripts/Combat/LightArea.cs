@@ -31,7 +31,7 @@ public class LightArea : MonoBehaviour
 
         if(lightArea.x <= 20)
         {
-
+            StartCoroutine(GameOver());
            gameOverUI.SetActive(true);
         }
     }

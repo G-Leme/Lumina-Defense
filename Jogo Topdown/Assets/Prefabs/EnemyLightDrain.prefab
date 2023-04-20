@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DrainRange: 1.25
-  attackDamage: 0.005
+  attackDamage: 0.03
   forcefieldLayer:
     serializedVersion: 2
     m_Bits: 8

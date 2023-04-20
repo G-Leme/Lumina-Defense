@@ -1878,7 +1878,7 @@ MeshCollider:
   m_GameObject: {fileID: 1571002333}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -2087,7 +2087,7 @@ MonoBehaviour:
   - {fileID: 805082143}
   spawnIndex: 0
   powerUp: {fileID: 2260074377142788157, guid: 984dd7c362342f04c9bbb80097be9cca, type: 3}
-  waveDuration: 70
+  waveDuration: 25
   currWaveUI: {fileID: 1310526032}
   enemiesLeft: {fileID: 202375627}
   spawnedEnemies: []

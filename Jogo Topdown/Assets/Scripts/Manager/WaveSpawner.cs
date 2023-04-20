@@ -39,7 +39,7 @@ public class WaveSpawner : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         enemiesLeft.text = enemiesToSpawn.Count.ToString();
         currWaveUI.text = currWave.ToString();
@@ -94,7 +94,7 @@ public class WaveSpawner : MonoBehaviour
             BruteAdded = true;
             waveCost = 10;
          
-            waveDuration = waveDuration + 20; ;
+           // waveDuration = waveDuration + 20; ;
         }
 
         if (enemiesInGame != null)
