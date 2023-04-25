@@ -42,7 +42,7 @@ public class EnemyStats : MonoBehaviour
         {
             turretSpark.sparkCount += spark;
             Destroy(gameObject);
-            if (lightAreaScript.lightArea.x <= 80)
+            if (lightAreaScript.lightArea.x <= 50)
             {
                 lightAreaScript.lightArea.x += lightRefund;
                 lightAreaScript.lightArea.y += lightRefund;
