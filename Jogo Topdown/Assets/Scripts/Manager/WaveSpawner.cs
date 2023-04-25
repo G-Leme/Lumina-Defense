@@ -28,12 +28,13 @@ public class WaveSpawner : MonoBehaviour
     private float spawnTimer;
     [SerializeField] private TextMeshProUGUI currWaveUI;
     [SerializeField] private TextMeshProUGUI enemiesLeft;
+  
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-     
+       
     }
 
 
@@ -82,7 +83,8 @@ public class WaveSpawner : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.G))
             {
                 Debug.Log("Generating Wave");
-               
+           
+        
                 currWave++;
                 GenerateWave();
             }
@@ -102,12 +104,11 @@ public class WaveSpawner : MonoBehaviour
 
             return;
         }
-        else if(enemiesInGame == null && enemiesToSpawn.Count <= 0) 
+        else if(enemiesInGame == null && enemiesToSpawn.Count <= 0 ) 
         {
-       
                 spawnedEnemies.Clear();
             
-          
+
         }
     }
 
@@ -157,13 +158,7 @@ public class WaveSpawner : MonoBehaviour
     }
 
  
-    IEnumerator firstWave()
-    {
-        yield return new WaitForSeconds(5f);
-        GenerateWave();    
-        yield return null;
-        yield break;
-    }
+   
 
 
 }

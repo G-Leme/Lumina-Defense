@@ -15,46 +15,36 @@ public class EnemyExplode : MonoBehaviour
     public Transform attackPoint;
     public LayerMask forcefieldLayer;
     public float attackDamage;
-    
 
     GameObject target;
     NavMeshAgent agent;
 
-    void Start()
-    {
-
-
-       
-
+    void Start() 
+    { 
         target = PlayerManager.instance.dome;
 
         agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);
-       
-        
-            agent.SetDestination(target.transform.position);
-        
 
-        
-
-                Attack();
+        agent.SetDestination(target.transform.position);
+        Attack();
                
             
         
 
         if (distance <= stopRange)
         {
-            agent.speed = 0f;
+
             
         }
         else
         {
-            agent.speed = 5.5f;
+           
             
         }
     }

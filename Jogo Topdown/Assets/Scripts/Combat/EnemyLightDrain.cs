@@ -14,6 +14,7 @@ public class EnemyLightDrain : MonoBehaviour
 
     public Transform attackPoint;
     public float stopMovementRange = 1.25f;
+    EnemyStats enemyStats;
 
     GameObject target;
     NavMeshAgent agent;
@@ -22,24 +23,23 @@ public class EnemyLightDrain : MonoBehaviour
     void Start()
     {
 
+        agent = GetComponent<NavMeshAgent>();
 
         canMove = true;
 
         target = PlayerManager.instance.dome;
 
-        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
+       // enemyStats = this.GetComponent<EnemyStats>();
 
         float distance = Vector3.Distance(target.transform.position, transform.position);
-        if (canMove == true)
-        {
-            agent.SetDestination(target.transform.position);
-        }
+
+        agent.SetDestination(target.transform.position);
+
 
         Attack();
 
@@ -49,12 +49,11 @@ public class EnemyLightDrain : MonoBehaviour
         if (distance <= stopMovementRange)
         {
             agent.speed = 0f;
-            canMove = false;
+            
         }
         else
         {
-            agent.speed = 5.5f;
-            canMove = true;
+            agent.speed = 5f;
         }
     }
 
@@ -95,7 +94,7 @@ public class EnemyLightDrain : MonoBehaviour
         stopMovementRange = 100f;
         yield return new WaitForSeconds(8f);
         DrainRange = 1f;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         stopMovementRange = 1f;
         yield break;
     }

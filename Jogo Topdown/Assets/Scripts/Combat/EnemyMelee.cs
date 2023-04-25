@@ -18,18 +18,17 @@ public Transform attackPoint;
 public float stopRange = 10f;
 
 GameObject target;
-NavMeshAgent agent;
-
+    NavMeshAgent agent;
 
     void Start()
-    { 
-      
+    {
+        agent = GetComponent<NavMeshAgent>();
 
-    canMove = true;
+        canMove = true;
 
     target = PlayerManager.instance.dome;
 
-    agent = GetComponent<NavMeshAgent>();
+
 }
 
 // Update is called once per frame
@@ -38,11 +37,9 @@ void FixedUpdate()
         
 
         float distance = Vector3.Distance(target.transform.position, transform.position);
-    if (canMove == true)
-    {
+
         agent.SetDestination(target.transform.position);
-    }
-        
+
         Attack();
         
         
@@ -50,12 +47,12 @@ void FixedUpdate()
 
     if (distance <= stopRange)
     {
-        agent.speed = 0f;
+       
         canMove = false;
     }
     else
     {
-        agent.speed = 5.5f;
+       
         canMove = true;
     }
 }
