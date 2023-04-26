@@ -32,9 +32,12 @@ public class LightArea : MonoBehaviour
 
     public void TakeDamageLight(float damage)
     {
-        lightArea.x -= damage;
-        lightArea.y -= damage;
-        lightArea.z -= damage;
+        if (lightArea.x > 20)
+        {
+            lightArea.x -= damage;
+            lightArea.y -= damage;
+            lightArea.z -= damage;
+        }
         if (lightArea.x <=20)
         {
             StartCoroutine(GameOver());

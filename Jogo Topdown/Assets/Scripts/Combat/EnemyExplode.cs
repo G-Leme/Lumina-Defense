@@ -33,20 +33,7 @@ public class EnemyExplode : MonoBehaviour
 
         agent.SetDestination(target.transform.position);
         Attack();
-               
-            
-        
-
-        if (distance <= stopRange)
-        {
-
-            
-        }
-        else
-        {
-           
-            
-        }
+                                      
     }
 
 
@@ -69,15 +56,10 @@ public class EnemyExplode : MonoBehaviour
                 return;
             }
             timeStamp = Time.time;
-            Debug.Log("hit");
             lightArea.GetComponent<LightArea>().TakeDamageLight(attackDamage);
             attackRange = 15f;
            StartCoroutine(Explode());
-           // var bullet = GameObject.Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
-
-            // lightArea.GetComponent<PlayerCombat>().tookDamage = true;
-            //playerCombat.immunityTime = 0;                    
+                     
         }
 
     }

@@ -12,7 +12,6 @@ public float cooldown = 1.5f;
 private float timeStamp = 0f;
 
 public LayerMask forcefieldLayer;
-private bool canMove;
 
 public Transform attackPoint;
 public float stopRange = 10f;
@@ -23,8 +22,6 @@ GameObject target;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
-        canMove = true;
 
     target = PlayerManager.instance.dome;
 
@@ -43,18 +40,6 @@ void FixedUpdate()
         Attack();
         
         
-    
-
-    if (distance <= stopRange)
-    {
-       
-        canMove = false;
-    }
-    else
-    {
-       
-        canMove = true;
-    }
 }
 
 private void OnDrawGizmosSelected()
@@ -78,13 +63,10 @@ private void OnDrawGizmosSelected()
             }
             timeStamp = Time.time;
                     lightArea.GetComponent<LightArea>().TakeDamageLight(attackDamage);
-               // lightArea.GetComponent<PlayerCombat>().tookDamage = true;
-                //playerCombat.immunityTime = 0;                    
+                                  
         }
 
     }
-
-    //
 
 
     }

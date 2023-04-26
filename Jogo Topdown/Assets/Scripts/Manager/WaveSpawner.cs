@@ -22,13 +22,14 @@ public class WaveSpawner : MonoBehaviour
     public int spawnIndex;
     public GameObject powerUp;
 
-    public int waveDuration;
+    public float waveDuration;
     private float waveTimer;
     private float spawnInterval;
     private float spawnTimer;
     [SerializeField] private TextMeshProUGUI currWaveUI;
     [SerializeField] private TextMeshProUGUI enemiesLeft;
-  
+    [SerializeField] private GameObject youWinUI;
+
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
     // Start is called before the first frame update
@@ -40,7 +41,7 @@ public class WaveSpawner : MonoBehaviour
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         enemiesLeft.text = enemiesToSpawn.Count.ToString();
         currWaveUI.text = currWave.ToString();
@@ -80,7 +81,7 @@ public class WaveSpawner : MonoBehaviour
         {
             
             
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.G) && currWave <= 9)
             {
                 Debug.Log("Generating Wave");
            
@@ -94,9 +95,15 @@ public class WaveSpawner : MonoBehaviour
         {
             enemies.Add(enemyBrute);
             BruteAdded = true;
-            waveCost = 10;
+            waveCost = 15;
          
            // waveDuration = waveDuration + 20; ;
+        }
+
+        if(currWave >= 9)
+        {
+            waveCost = 25;
+            waveDuration = 35.2f;
         }
 
         if (enemiesInGame != null)
@@ -107,7 +114,10 @@ public class WaveSpawner : MonoBehaviour
         else if(enemiesInGame == null && enemiesToSpawn.Count <= 0 ) 
         {
                 spawnedEnemies.Clear();
-            
+                if(currWave == 10)
+            {
+                youWinUI.SetActive(true);
+            }
 
         }
     }

@@ -10,7 +10,6 @@ public class EnemyLightDrain : MonoBehaviour
    
 
     public LayerMask forcefieldLayer;
-    private bool canMove;
 
     public Transform attackPoint;
     public float stopMovementRange = 1.25f;
@@ -25,7 +24,6 @@ public class EnemyLightDrain : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
 
-        canMove = true;
 
         target = PlayerManager.instance.dome;
 
@@ -34,7 +32,6 @@ public class EnemyLightDrain : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       // enemyStats = this.GetComponent<EnemyStats>();
 
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
@@ -51,10 +48,9 @@ public class EnemyLightDrain : MonoBehaviour
             agent.speed = 0f;
             
         }
-        else
-        {
-            agent.speed = 5f;
-        }
+       
+            
+        
     }
 
     private void OnDrawGizmosSelected()
@@ -95,6 +91,7 @@ public class EnemyLightDrain : MonoBehaviour
         yield return new WaitForSeconds(8f);
         DrainRange = 1f;
         yield return new WaitForSeconds(1.5f);
+        agent.speed = 8f;
         stopMovementRange = 1f;
         yield break;
     }
