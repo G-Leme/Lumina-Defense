@@ -14,6 +14,7 @@ public class EnemyLightDrain : MonoBehaviour
     public Transform attackPoint;
     public float stopMovementRange = 1.25f;
     EnemyStats enemyStats;
+    [SerializeField] Animator animator;
 
     GameObject target;
     NavMeshAgent agent;
@@ -88,17 +89,19 @@ public class EnemyLightDrain : MonoBehaviour
     {
         DrainRange = 100f;
         stopMovementRange = 100f;
+        animator.SetBool("Attacking", true);
         yield return new WaitForSeconds(8f);
         DrainRange = 1f;
         yield return new WaitForSeconds(1.5f);
         agent.speed = 8f;
         stopMovementRange = 1f;
+        animator.SetBool("Attacking", false);
         yield break;
     }
 
     private void OnCollisionExit(Collision lightArea)
      {
-        StopAllCoroutines();
+        StopCoroutine(Drain());
     }
 
 
