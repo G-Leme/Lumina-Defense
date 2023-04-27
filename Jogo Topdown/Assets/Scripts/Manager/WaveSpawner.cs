@@ -116,7 +116,7 @@ public class WaveSpawner : MonoBehaviour
                 spawnedEnemies.Clear();
                 if(currWave == 10)
             {
-                youWinUI.SetActive(true);
+                StartCoroutine(YouWin());
             }
 
         }
@@ -168,7 +168,14 @@ public class WaveSpawner : MonoBehaviour
     }
 
  
-   
+   IEnumerator YouWin()
+    {
+       
+        youWinUI.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        Application.Quit();
+
+    }
 
 
 }
