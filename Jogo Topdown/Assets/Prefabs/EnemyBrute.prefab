@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 169999834431813794}
   - component: {fileID: 8259589191871531780}
   - component: {fileID: 2750229190245600623}
+  - component: {fileID: 5261460900469808626}
   m_Layer: 8
   m_Name: EnemyBrute
   m_TagString: Enemy
@@ -145,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422a4610a309c434586d1b480788fb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1.25
+  attackRange: 2.72
   attackDamage: 1
   cooldown: 4
   forcefieldLayer:
@@ -153,6 +154,7 @@ MonoBehaviour:
     m_Bits: 8
   attackPoint: {fileID: 6852744768309407903}
   stopRange: 1.25
+  animator: {fileID: 5261460900469808626}
 --- !u!195 &2750229190245600623
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -175,6 +177,25 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &5261460900469808626
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852744768309407899}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6852744768463747076
 GameObject:
   m_ObjectHideFlags: 0

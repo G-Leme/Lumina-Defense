@@ -6,15 +6,13 @@ using UnityEngine.AI;
 public class EnemyExplode : MonoBehaviour
 {
     public float attackRange;
-    public GameObject bulletPrefab;
-    public Transform bulletSpawnPoint;
-    public float bulletSpeed;
     public float cooldown = 0.3333f;
     private float timeStamp = 0f;
     public float stopRange = 10f;
     public Transform attackPoint;
     public LayerMask forcefieldLayer;
     public float attackDamage;
+    [SerializeField] Animator animator;
 
     GameObject target;
     NavMeshAgent agent;
@@ -40,8 +38,8 @@ public class EnemyExplode : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-        Gizmos.DrawWireSphere(transform.position, stopRange);
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(attackPoint.position, stopRange);
     }
 
 
@@ -56,6 +54,7 @@ public class EnemyExplode : MonoBehaviour
                 return;
             }
             timeStamp = Time.time;
+            animator.SetBool("Attacking", true);
             lightArea.GetComponent<LightArea>().TakeDamageLight(attackDamage);
             attackRange = 15f;
            StartCoroutine(Explode());
@@ -66,8 +65,8 @@ public class EnemyExplode : MonoBehaviour
 
     IEnumerator Explode()
     {
+
         
-       
         yield return new WaitForSeconds(2f);
         attackDamage = 1.5f;
         yield return new WaitForSeconds(0.1f);
