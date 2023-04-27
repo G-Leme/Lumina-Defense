@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
    // public CharacterController controller;
     public float turnSmoothTime = 0.1f;
-    public GameObject predictionPoint;
+    [SerializeField] Animator animator;
     Rigidbody rb;
 
     private float turnSmoothVelocity;
@@ -39,9 +39,10 @@ public class PlayerMovement : MonoBehaviour
         
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
+        animator.SetFloat("Speed", direction.sqrMagnitude);
        rb.MovePosition(transform.position + direction * Time.deltaTime * moveSpeed);
 
-        predictionPoint.transform.position = this.transform.position + direction * 2.5f;
+    
 
         
     }
