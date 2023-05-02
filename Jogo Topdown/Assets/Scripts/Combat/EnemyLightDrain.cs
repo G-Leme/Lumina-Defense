@@ -43,7 +43,6 @@ public class EnemyLightDrain : MonoBehaviour
 
 
 
-
         if (distance <= stopMovementRange)
         {
             agent.speed = 0f;
@@ -69,14 +68,11 @@ public class EnemyLightDrain : MonoBehaviour
         foreach (Collider lightArea in lightHit)
         {
 
-            Debug.Log("hit");
+          
             lightArea.GetComponent<LightArea>().TakeDamageLight(attackDamage);
             DrainRange = 8f;
-            stopMovementRange = 100f;
-            StartCoroutine(Drain());
-
-            // lightArea.GetComponent<PlayerCombat>().tookDamage = true;
-            //playerCombat.immunityTime = 0;                    
+            stopMovementRange = 100f;       
+            StartCoroutine(Drain());                
         }
 
 
@@ -91,10 +87,10 @@ public class EnemyLightDrain : MonoBehaviour
         stopMovementRange = 100f;
         animator.SetBool("Attacking", true);
         yield return new WaitForSeconds(8f);
+        stopMovementRange = 1f;
         DrainRange = 1f;
         yield return new WaitForSeconds(1.5f);
-        agent.speed = 8f;
-        stopMovementRange = 1f;
+        agent.speed = 8f;       
         animator.SetBool("Attacking", false);
         yield break;
     }

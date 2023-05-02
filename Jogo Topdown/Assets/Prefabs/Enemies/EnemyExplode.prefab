@@ -2053,7 +2053,7 @@ GameObject:
   - component: {fileID: 8666483068875819720}
   - component: {fileID: -8957711983285865763}
   m_Layer: 8
-  m_Name: EnemyExplodeAnimated
+  m_Name: EnemyExplode
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

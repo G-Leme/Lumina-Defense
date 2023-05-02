@@ -17,6 +17,7 @@ public class LightTurret : MonoBehaviour
     private float timeStamp = 0f;
     [SerializeField] private TurretPlacement turretPlacementScript;
     private GameObject turretPlacement;
+    [SerializeField] AudioSource shootingSound;
 
     void Start()
     {
@@ -38,7 +39,8 @@ public class LightTurret : MonoBehaviour
 
         if (Time.time >= timeStamp)
             {
-                Attack();
+            
+            Attack();
                 timeStamp = Time.time + cooldown;
             }          
     }
@@ -58,7 +60,8 @@ public class LightTurret : MonoBehaviour
         foreach (Collider enemy in enemyHit)
         {
             var bullet = GameObject.Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-           
+
+            shootingSound.Play();
 
             Destroy(bullet, 3.0f);
         }

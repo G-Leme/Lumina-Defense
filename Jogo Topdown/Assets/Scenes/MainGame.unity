@@ -914,22 +914,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 152588186, guid: d7914825d9a0fc741966641826083b19, type: 3}
+      propertyPath: m_Volume
+      value: 0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 773347990, guid: d7914825d9a0fc741966641826083b19, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 2043162410}
-    - target: {fileID: 773347994, guid: d7914825d9a0fc741966641826083b19, type: 3}
-      propertyPath: m_Drag
-      value: 8.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 773347994, guid: d7914825d9a0fc741966641826083b19, type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 773347994, guid: d7914825d9a0fc741966641826083b19, type: 3}
-      propertyPath: m_AngularDrag
-      value: 9.81
-      objectReference: {fileID: 0}
     - target: {fileID: 3809271701189088215, guid: d7914825d9a0fc741966641826083b19, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2720,21 +2712,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1114353453}
     - target: {fileID: 6276573048115471781, guid: 9fba23e0678a431419901658023d2c60, type: 3}
-      propertyPath: lightTurret
-      value: 
-      objectReference: {fileID: 7317767465339076350, guid: e9a7b6a5ae713d14daa374ea6ef71ac8, type: 3}
-    - target: {fileID: 6276573048115471781, guid: 9fba23e0678a431419901658023d2c60, type: 3}
       propertyPath: sparkCountUI
       value: 
       objectReference: {fileID: 122664305}
-    - target: {fileID: 6276573048115471781, guid: 9fba23e0678a431419901658023d2c60, type: 3}
-      propertyPath: turretPrefab
-      value: 
-      objectReference: {fileID: 7317767465339076350, guid: e9a7b6a5ae713d14daa374ea6ef71ac8, type: 3}
-    - target: {fileID: 6276573048115471781, guid: 9fba23e0678a431419901658023d2c60, type: 3}
-      propertyPath: turretPreview
-      value: 
-      objectReference: {fileID: 7317767465339076350, guid: 78f6027d90163ff45b1a8b2096cf0072, type: 3}
     - target: {fileID: 6276573048282872470, guid: 9fba23e0678a431419901658023d2c60, type: 3}
       propertyPath: resetPosition
       value: 

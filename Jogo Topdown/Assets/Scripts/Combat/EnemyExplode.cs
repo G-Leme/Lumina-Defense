@@ -14,6 +14,7 @@ public class EnemyExplode : MonoBehaviour
     public float attackDamage;
     [SerializeField] Animator animator;
 
+
     GameObject target;
     NavMeshAgent agent;
 

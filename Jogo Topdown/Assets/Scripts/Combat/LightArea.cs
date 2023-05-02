@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LightArea : MonoBehaviour
 {
@@ -53,6 +52,6 @@ public class LightArea : MonoBehaviour
     IEnumerator GameOver()
     {
         yield return new WaitForSeconds(4f);
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 }

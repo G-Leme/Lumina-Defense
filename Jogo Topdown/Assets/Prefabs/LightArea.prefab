@@ -44,17 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a1392c3ee2a8448b07561e7d6b1ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretPreview: {fileID: 9044054437057501269, guid: ff0e5687d41d1ac478a1e62f2ae6b807, type: 3}
-  turretPrefab: {fileID: 7678192617690897682, guid: 3233bba40fd63a94cb9965663c6733f4, type: 3}
+  turretPreview: {fileID: 7317767465339076350, guid: 78f6027d90163ff45b1a8b2096cf0072, type: 3}
+  turretPrefab: {fileID: 7317767465339076350, guid: e9a7b6a5ae713d14daa374ea6ef71ac8, type: 3}
   placementKeyCode: 98
   lightAreaScript: {fileID: 6276573048503223541}
   lightArea: {fileID: 5581098253574266539}
   turretPlacementArea: {fileID: 6276573047731813575}
   lightTurretScript: {fileID: 7678192617690897685, guid: 3233bba40fd63a94cb9965663c6733f4, type: 3}
-  lightTurret: {fileID: 7678192617690897682, guid: 3233bba40fd63a94cb9965663c6733f4, type: 3}
+  lightTurret: {fileID: 7317767465339076350, guid: e9a7b6a5ae713d14daa374ea6ef71ac8, type: 3}
   sparkCount: 10
   sparkAmount: 10
   sparkCountUI: {fileID: 0}
+  playerCombat: {fileID: 0}
 --- !u!1 &5581098253574266539
 GameObject:
   m_ObjectHideFlags: 0

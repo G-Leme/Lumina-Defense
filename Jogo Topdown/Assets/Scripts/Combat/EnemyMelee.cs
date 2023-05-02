@@ -15,7 +15,7 @@ public LayerMask forcefieldLayer;
 
 public Transform attackPoint;
 public float stopRange = 10f;
-    [SerializeField] Animator animator;
+[SerializeField] Animator animator;
 
 GameObject target;
     NavMeshAgent agent;
@@ -58,13 +58,16 @@ private void OnDrawGizmosSelected()
         foreach (Collider lightArea in lightHit)
         {
             animator.SetBool("attacking", true);
-            if(Time.time - timeStamp < cooldown)
+            if (Time.time - timeStamp < cooldown)
             {
                 return;
             }
+           
+            else
+            {
+                lightArea.GetComponent<LightArea>().TakeDamageLight(attackDamage);
+            }
             timeStamp = Time.time;
-                    lightArea.GetComponent<LightArea>().TakeDamageLight(attackDamage);
-                                  
         }
 
     }

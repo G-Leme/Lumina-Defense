@@ -574,7 +574,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1dbfbf5c450289449a031ded4f917aff, type: 2}
-  - {fileID: 2100000, guid: 71a825ea18170134da68170781838ede, type: 2}
+  - {fileID: 2100000, guid: 698545c9d5dfbae49b15b18ac5cdb5a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2051,9 +2051,9 @@ GameObject:
   - component: {fileID: 8666483068875819727}
   - component: {fileID: 8666483068875819721}
   - component: {fileID: 8666483068875819720}
-  - component: {fileID: 8666483068875819723}
+  - component: {fileID: 1287027048608141274}
   m_Layer: 8
-  m_Name: EnemyBruteAnimated
+  m_Name: EnemyLightDrain
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2068,7 +2068,7 @@ Transform:
   m_GameObject: {fileID: 8396083814564335955}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.6767, y: 0.19, z: -45.63}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 3991555034134415367}
   - {fileID: 3719801624898415485}
@@ -2086,7 +2086,7 @@ Animator:
   m_GameObject: {fileID: 8396083814564335955}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: bc85f4330d5a3a84089ae752f5120098, type: 3}
-  m_Controller: {fileID: 9100000, guid: c9e4471917baa85488c841cdc9d00b72, type: 2}
+  m_Controller: {fileID: 9100000, guid: c6a265cc9ba225b40b9fc6061551d53b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2134,7 +2134,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2159,11 +2159,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 200
-  lightRefund: 0.7
-  spark: 3
-  moveSpeed: 0.2
---- !u!114 &8666483068875819723
+  maxHealth: 50
+  lightRefund: 0.5
+  spark: 1
+  moveSpeed: 0.3
+--- !u!114 &1287027048608141274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2172,17 +2172,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8396083814564335955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 422a4610a309c434586d1b480788fb91, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b9adf26919310f4cb1261361dbf893b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2.72
-  attackDamage: 0.5
-  cooldown: 2
+  DrainRange: 1.25
+  attackDamage: 0.015
   forcefieldLayer:
     serializedVersion: 2
     m_Bits: 8
   attackPoint: {fileID: 348058845}
-  stopRange: 1.25
+  stopMovementRange: 1.25
   animator: {fileID: 2967623418524864915}
 --- !u!1 &8515153056587220343
 GameObject:

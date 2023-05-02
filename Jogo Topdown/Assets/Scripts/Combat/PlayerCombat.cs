@@ -15,14 +15,15 @@ public class PlayerCombat : MonoBehaviour
     public float timeBetweenShots = 0.3333f;
     private float timeStamp = 0f;
     public float bulletDamage = 25f;
-
-   
+    [SerializeField] AudioSource shootingSound;
+    public bool canShoot;
 
 
 
     private void Start()
     {
         currentHealth = maxHealth;
+        canShoot = true;
     }
 
     private void Update()
@@ -41,8 +42,9 @@ public class PlayerCombat : MonoBehaviour
         }
 
 
-        if ((Time.time >= timeStamp) && (Input.GetKey(KeyCode.Mouse0)))
+        if ((Time.time >= timeStamp) && (Input.GetKey(KeyCode.Mouse0)) && canShoot == true)
         {
+         
             Fire();
             timeStamp = Time.time + timeBetweenShots;
         }
@@ -68,6 +70,8 @@ public class PlayerCombat : MonoBehaviour
         var bullet = GameObject.Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 25;
+
+        shootingSound.Play();
 
         Destroy(bullet, 2.0f);
     }

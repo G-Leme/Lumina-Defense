@@ -18,12 +18,13 @@ public class TurretPlacement : MonoBehaviour
     [SerializeField] private GameObject lightTurret;
     public float sparkCount;
     public int sparkAmount;
-    [SerializeField]private TextMeshProUGUI sparkCountUI;
-
+    [SerializeField] private TextMeshProUGUI sparkCountUI;
+    [SerializeField] private PlayerCombat playerCombat;
 
 
     private void Start()
     {
+        playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
         lightTurretScript = lightTurret.GetComponent<LightTurret>();
         lightAreaScript = lightArea.GetComponent<LightArea>();
     }
@@ -49,10 +50,13 @@ public class TurretPlacement : MonoBehaviour
             var turretPrefabInstance = GameObject.Instantiate(turretPrefab, new Vector3(placableObject.transform.position.x,
            placableObject.transform.position.y, placableObject.transform.position.z), Quaternion.identity);
             Destroy(placableObject);
+
             placableObject = null;
-   
+            playerCombat.canShoot = true;
+
             turretPlacementArea.SetActive(false);
             lightAreaScript.TakeDamageLight(4f);
+
             sparkCount = sparkCount - sparkAmount;
             sparkAmount = sparkAmount + 20;
         }
@@ -79,13 +83,13 @@ public class TurretPlacement : MonoBehaviour
             {
                 if (placableObject == null)
                 {
-                
+                    playerCombat.canShoot = false;
                     turretPlacementArea.SetActive(true);
                     placableObject = Instantiate(turretPreview);
                 }
                 else
                 {
-                  
+                    playerCombat.canShoot = true;
                     turretPlacementArea.SetActive(false);
                     Destroy(placableObject);
                 }

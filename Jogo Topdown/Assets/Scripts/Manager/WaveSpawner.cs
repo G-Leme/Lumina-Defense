@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
@@ -38,10 +37,25 @@ public class WaveSpawner : MonoBehaviour
        
     }
 
-
-
-    // Update is called once per frame
     void Update()
+    {
+        if (waveTimer <= 0 && spawnedEnemies.Count <= 0)
+        {
+
+
+            if (Input.GetKeyDown(KeyCode.G) && currWave <= 9)
+            {
+                Debug.Log("Generating Wave");
+
+
+                currWave++;
+                GenerateWave();
+            }
+        }
+    }
+
+
+    void FixedUpdate()
     {
         enemiesLeft.text = enemiesToSpawn.Count.ToString();
         currWaveUI.text = currWave.ToString();
@@ -77,19 +91,7 @@ public class WaveSpawner : MonoBehaviour
             waveTimer -= Time.fixedDeltaTime;
         }
 
-        if (waveTimer <= 0 && spawnedEnemies.Count <= 0 )
-        {
-            
-            
-            if (Input.GetKeyDown(KeyCode.G) && currWave <= 9)
-            {
-                Debug.Log("Generating Wave");
-           
-        
-                currWave++;
-                GenerateWave();
-            }
-        }
+       
 
         if(currWave >= 4 && BruteAdded == false)
         {
@@ -173,7 +175,7 @@ public class WaveSpawner : MonoBehaviour
        
         youWinUI.SetActive(true);
         yield return new WaitForSeconds(4f);
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
 
     }
 
