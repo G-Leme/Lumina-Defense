@@ -6,7 +6,7 @@ public class BulletScript : MonoBehaviour
 {
 
     public float damage;
-    public PlayerCombat playerDmg;
+    private PlayerCombat playerDmg;
     private void Start()
     {
       playerDmg = GameObject.Find("Player").GetComponent<PlayerCombat>();
@@ -27,7 +27,7 @@ public class BulletScript : MonoBehaviour
             }
         }
 
-        Debug.Log("Hit");
+
         Destroy(gameObject);
     }
 

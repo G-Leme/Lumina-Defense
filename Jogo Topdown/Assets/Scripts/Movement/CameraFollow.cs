@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player;
+    [SerializeField] private Transform player;
 
-    float camOffSetZ;
+   private float camOffSetZ;
 
     void Start()
     {

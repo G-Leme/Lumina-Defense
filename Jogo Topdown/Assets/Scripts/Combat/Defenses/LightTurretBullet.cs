@@ -7,7 +7,7 @@ public class LightTurretBullet : MonoBehaviour
 {
     Rigidbody rb;
     GameObject targets;
-    public float force;
+    [SerializeField] private float force;
     [SerializeField] private float damage;
     void Start()
     {
@@ -60,8 +60,7 @@ public class LightTurretBullet : MonoBehaviour
         {
 
             enemyComponent.TakeDamage(damage);
-            //   playerComponent.tookDamage = true;
-            // playerComponent.immunityTime = 0;
+       
 
         }
 

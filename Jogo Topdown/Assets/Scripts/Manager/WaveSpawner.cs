@@ -6,37 +6,30 @@ using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private Enemy enemyBrute;
-    private GameObject enemiesInGame;
-    public int waveMultiplier;
-    public List<Enemy> enemies = new List<Enemy>();
-    public int currWave;
-    private int waveValue;
-    [SerializeField] private int waveCost;
+    [SerializeField] private List<Enemy> enemies = new List<Enemy>();
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
-    private float waveInterval;
+    private GameObject enemiesInGame;
     private bool BruteAdded;
 
-    public Transform powerupBoxSpawnPos;
-    public Transform[] spawnLocation;
+    [SerializeField] private int waveCost;
+    public int currWave;
+    private int waveValue;
     public int spawnIndex;
-    public GameObject powerUp;
+
+    public Transform[] spawnLocation;
 
     public float waveDuration;
     private float waveTimer;
     private float spawnInterval;
     private float spawnTimer;
+
     [SerializeField] private TextMeshProUGUI currWaveUI;
     [SerializeField] private TextMeshProUGUI enemiesLeft;
     [SerializeField] private GameObject youWinUI;
 
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
+   
     void Update()
     {
         if (waveTimer <= 0 && spawnedEnemies.Count <= 0)
@@ -45,9 +38,6 @@ public class WaveSpawner : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.G) && currWave <= 9)
             {
-                Debug.Log("Generating Wave");
-
-
                 currWave++;
                 GenerateWave();
             }

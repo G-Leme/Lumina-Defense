@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public Camera cam;
-   // public CharacterController controller;
-    public float turnSmoothTime = 0.1f;
+    [SerializeField] private float moveSpeed = 5f;
     [SerializeField] Animator animator;
-    Rigidbody rb;
+   private Rigidbody rb;
 
-    private float turnSmoothVelocity;
 
 
     void Start()
@@ -19,11 +15,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
     private void FixedUpdate()

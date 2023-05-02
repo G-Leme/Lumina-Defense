@@ -5,18 +5,19 @@ using UnityEngine.AI;
 
 public class LightTurret : MonoBehaviour
 {
-    public float attackRange;
-    public Transform attackPoint;
+    [SerializeField] private float attackRange;
+    [SerializeField] private Transform attackPoint;
 
-    public GameObject bulletPrefab;
-    public Transform bulletSpawnPoint;
-    public LayerMask enemyLayer;
-
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform bulletSpawnPoint;
+    [SerializeField] private float cooldown ;
     public float bulletSpeed;
-    public float cooldown ;
     private float timeStamp = 0f;
+
+    [SerializeField] private LayerMask enemyLayer;
+
     [SerializeField] private TurretPlacement turretPlacementScript;
-    private GameObject turretPlacement;
+
     [SerializeField] AudioSource shootingSound;
 
     void Start()

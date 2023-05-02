@@ -9,13 +9,11 @@ public class LightArea : MonoBehaviour
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
-    private WaveSpawner currWave;
     public bool canGrow;
     // Start is called before the first frame update
     void Start()
     {
        
-        currWave = GameObject.Find("GameManager").GetComponent<WaveSpawner>();
         health = maxHealth;
     }
 
@@ -52,6 +50,6 @@ public class LightArea : MonoBehaviour
     IEnumerator GameOver()
     {
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu"); 
     }
 }

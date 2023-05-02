@@ -5,13 +5,13 @@ using UnityEngine.AI;
 
 public class EnemyExplode : MonoBehaviour
 {
-    public float attackRange;
-    public float cooldown = 0.3333f;
+    [SerializeField] private float attackRange;
+    [SerializeField] private float cooldown = 0.3333f;
     private float timeStamp = 0f;
-    public float stopRange = 10f;
-    public Transform attackPoint;
-    public LayerMask forcefieldLayer;
-    public float attackDamage;
+    [SerializeField] private float attackDamage;
+    [SerializeField] private Transform attackPoint;
+
+    [SerializeField] private LayerMask forcefieldLayer;
     [SerializeField] Animator animator;
 
 
@@ -40,7 +40,7 @@ public class EnemyExplode : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        Gizmos.DrawWireSphere(attackPoint.position, stopRange);
+ 
     }
 
 

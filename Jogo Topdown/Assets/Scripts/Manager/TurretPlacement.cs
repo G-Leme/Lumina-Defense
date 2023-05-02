@@ -11,21 +11,23 @@ public class TurretPlacement : MonoBehaviour
     [SerializeField] private GameObject turretPrefab;
     [SerializeField] private KeyCode placementKeyCode = KeyCode.B;
     private GameObject placableObject;
+
     [SerializeField] LightArea lightAreaScript;
     [SerializeField] private GameObject lightArea;
     [SerializeField] private GameObject turretPlacementArea;
-    [SerializeField] LightTurret lightTurretScript;
-    [SerializeField] private GameObject lightTurret;
+
+    [SerializeField] private PlayerCombat playerCombat;
+
     public float sparkCount;
     public int sparkAmount;
+
     [SerializeField] private TextMeshProUGUI sparkCountUI;
-    [SerializeField] private PlayerCombat playerCombat;
 
 
     private void Start()
     {
         playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
-        lightTurretScript = lightTurret.GetComponent<LightTurret>();
+   
         lightAreaScript = lightArea.GetComponent<LightArea>();
     }
 

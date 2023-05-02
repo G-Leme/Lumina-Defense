@@ -6,17 +6,18 @@ public class EnemyStats : MonoBehaviour
 {
 
     [SerializeField] float currentHealth, maxHealth = 100f;
-    private LightArea lightAreaScript;
+    [SerializeField] public float moveSpeed;
+
     [SerializeField] private float lightRefund;
     [SerializeField] private float spark;
-    [SerializeField] public float moveSpeed;
-    private Rigidbody rb;
+    private LightArea lightAreaScript;
     private TurretPlacement turretSpark;
-    GameObject target;
-    // Start is called before the first frame update
+
+    private Rigidbody rb;
+  
     void Start()
     {
-        target = PlayerManager.instance.dome;
+
         turretSpark = GameObject.Find("TurretPlacement").GetComponent<TurretPlacement>();
         lightAreaScript = GameObject.Find("LightArea").GetComponent<LightArea>();
         currentHealth = maxHealth;
@@ -27,10 +28,7 @@ public class EnemyStats : MonoBehaviour
     void FixedUpdate()
     {
         Physics.IgnoreLayerCollision(8, 8);
-
-       // float distance = Vector3.Distance(target.transform.position, transform.position);
      
-
 
     }
 

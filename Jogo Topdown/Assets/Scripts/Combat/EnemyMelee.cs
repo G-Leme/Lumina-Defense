@@ -6,19 +6,19 @@ using UnityEngine.AI;
 
 public class EnemyMelee : MonoBehaviour
 {
-public float attackRange = 10f;
-public float attackDamage;
-public float cooldown = 1.5f;
+[SerializeField] private float attackRange = 10f;
+[SerializeField] private float attackDamage;
+[SerializeField] private float cooldown = 1.5f;
 private float timeStamp = 0f;
 
-public LayerMask forcefieldLayer;
+ [SerializeField] private LayerMask forcefieldLayer;
+[SerializeField] private Transform attackPoint;
 
-public Transform attackPoint;
-public float stopRange = 10f;
 [SerializeField] Animator animator;
 
-GameObject target;
-    NavMeshAgent agent;
+private GameObject target;
+private NavMeshAgent agent;
+
 
     void Start()
     {
@@ -47,7 +47,6 @@ private void OnDrawGizmosSelected()
 {
     Gizmos.color = Color.red;
     Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    Gizmos.DrawWireSphere(attackPoint.position, stopRange);
 
 }
 

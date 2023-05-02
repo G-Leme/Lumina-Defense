@@ -5,14 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyLightDrain : MonoBehaviour
 {
-    public float DrainRange = 1.25f;
-    public float attackDamage;
+    [SerializeField] private float DrainRange = 1.25f;
+    [SerializeField] private float attackDamage;
    
 
-    public LayerMask forcefieldLayer;
+    [SerializeField] private LayerMask forcefieldLayer;
 
-    public Transform attackPoint;
-    public float stopMovementRange = 1.25f;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float stopMovementRange = 1.25f;
     EnemyStats enemyStats;
     [SerializeField] Animator animator;
 
